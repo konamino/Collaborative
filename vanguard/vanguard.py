@@ -41,6 +41,7 @@ class Vanguard(commands.Cog):
   @rule.command()
   @checks.admin()
   async def full(self, ctx):
+    """Shows all the rules."""
     embed = Embed.create(
       self, ctx, title="<:alert:777928824670388254> Vanguard Rules",
       description=(
@@ -72,6 +73,7 @@ class Vanguard(commands.Cog):
     
   @rule.command(name="1", aliases=["r1"])
   async def one(self, ctx):
+    """Rule Number One."""
     embed = Embed.create(
       self, ctx, title="<:alert:777928824670388254> Rule Number One",
       description="DO NOT share bot tokens anywhere. If you're showing code which includes the token, please replace it with placeholding text."
@@ -80,6 +82,7 @@ class Vanguard(commands.Cog):
 
   @rule.command(name="2", aliases=["r2"])
   async def two(self, ctx):
+    """Rule Number Two."""
     embed = Embed.create(
       self, ctx, title="<:alert:777928824670388254> Rule Number Two",
       description="Keep to the correct channels, we'll be strict on this. If you don't know where you're going, ask in <#758775858222727168>. Additionally, keep discussion relevant to the channel topic."
@@ -88,6 +91,7 @@ class Vanguard(commands.Cog):
 
   @rule.command(name="3", aliases=["r3"])
   async def three(self, ctx):
+    """Rule Number Three."""
     embed = Embed.create(
       self, ctx, title="<:alert:777928824670388254> Rule Number Three",
       description="We will not offer support for coding which involves illegally mitigating APIs and websites, or that breaks terms of service for discord or the targeted environment, or for other actions which may be considered malicious from intent."
@@ -96,6 +100,7 @@ class Vanguard(commands.Cog):
       
   @rule.command(name="4", aliases=["r4"])
   async def four(self, ctx):
+    """Rule Number Four."""
     embed = Embed.create(
       self, ctx, title="<:alert:777928824670388254> Rule Number Four",
       description="Listen to and respect staff members and their instructions. Do not be rude or vulgar to those who voluntarily give up their time to help you."
@@ -104,6 +109,7 @@ class Vanguard(commands.Cog):
 
   @rule.command(name="5", aliases=["r5"])
   async def five(self, ctx):
+    """Rule Number Five."""
     embed = Embed.create(
       self, ctx, title="<:alert:777928824670388254> Rule Number Five",
       description="Do not spam. Do not advertise content; this includes discord servers, or media that you are looking to promote. We don't do that here."
@@ -112,6 +118,7 @@ class Vanguard(commands.Cog):
 
   @rule.command(name="6", aliases=["r6"])
   async def six(self, ctx):
+    """Rule Number Six."""
     embed = Embed.create(
       self, ctx, title="<:alert:777928824670388254> Rule Number Six",
       description="Usernames that involve unicode, slurs or invisibility will be changed."
@@ -120,6 +127,7 @@ class Vanguard(commands.Cog):
       
   @commands.command(aliases=["quicklink"])
   async def quicklinks(self, ctx):
+    """Vanguard Quicklinks."""
     embed = Embed.create(
       self, ctx, title="<:alert:777928824670388254> Quicklinks",
       description=(
@@ -132,6 +140,7 @@ class Vanguard(commands.Cog):
     
   @commands.command(aliases=["codeblocks"])
   async def codeblock(self, ctx):
+    """Code block guides."""
     embed = Embed.create(
       self, ctx, title="Codeblocks!",
       description=(
