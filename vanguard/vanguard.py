@@ -24,6 +24,19 @@ class Vanguard(commands.Cog):
   @commands.group()
   async def rule(self, ctx):
     """Vanguard Rule Index"""
+  
+  @commands.group()
+  async def support(self, ctx):
+    """Cog support, and support server."""
+    
+  @support.command(aliases=["ss"])
+  async def server(self, ctx):
+      """Support Server invite link."""
+      embed = Embed.create(
+          self, ctx, title="Support Server",
+          description=f"[You can join our support server here.](https://discord.gg/JmCFyq7)"
+      )
+      await ctx.send(embed=embed)
     
   @rule.command()
   @checks.admin()
