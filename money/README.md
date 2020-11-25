@@ -1,0 +1,1 @@
+# For those wondering, I wanted to make a fork of the Red economy. I am having troubles connecting my SSH to WinSCP therefore I cannot directly modify the core, so this is a temporary cog I have copied across and modified slightly.
