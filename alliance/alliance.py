@@ -30,8 +30,8 @@ class Alliance(commands.Cog):
             embed = Embed.create(
                 self, ctx, title="Successful <:success:777167188816560168>",
                 description=f"""
-                You can set your nickname using `dem timezone <timezone>`.
-                For example: `dem timezone +4` or `dem timezone -12`.
+                You can set your nickname using `{ctx.clean_prefix}timezone <timezone>`.
+                For example: `{ctx.clean_prefix}timezone +4` or `{ctx.clean_prefix}timezone -12`.
                 Your timezone is no longer shown on your nickname (`{ctx.author.name}`)
                 """
             )
@@ -281,6 +281,26 @@ class Alliance(commands.Cog):
             start_adding_reactions(
                 question, ReactionPredicate.YES_OR_NO_EMOJIS
             )
+            pred = ReactionPredicate.yes_or_no(question, ctx.author)
+            event = "reaction_add"
+        else:
+            pred = MessagePredicate.yes_or_no(ctx)
+            event = "message"
+        try:
+            await ctx.bot.wait_for(event, check=pred, timeout=20)
+        except asyncio.TimeoutError:
+            await question.delete()
+            await ctx.send("Okay then :D")
+        if not pred.result:
+            await question.delete()
+            return await ctx.send("Canceled!")
+        else:
+            if can_react:
+                with suppress(discord.Forbidden):
+                    await question.clear_reactions()
+        await self.config.guild(ctx.guild).set_raw(action, value=None)
+        await ctx.send("Removed the {}!".format(action))
+
             pred = ReactionPredicate.yes_or_no(question, ctx.author)
             event = "reaction_add"
         else:
