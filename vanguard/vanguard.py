@@ -31,12 +31,12 @@ class Vanguard(commands.Cog):
     
   @support.command(aliases=["ss"])
   async def server(self, ctx):
-      """Support Server invite link."""
-      embed = Embed.create(
-          self, ctx, title="Support Server",
-          description=f"[You can join our support server here.](https://discord.gg/JmCFyq7)"
-      )
-      await ctx.send(embed=embed)
+    """Support Server invite link."""
+    embed = Embed.create(
+        self, ctx, title="Support Server",
+        description=f"[You can join our support server here.](https://discord.gg/JmCFyq7)"
+    )
+    await ctx.send(embed=embed)
     
   @rule.command()
   @checks.admin()
